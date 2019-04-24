@@ -1,0 +1,33 @@
+
+<ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="settings"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="list"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button expand="block" [routerLink]="['/play', {x: 3, y: 3}]">3 x 3</ion-button>
+        <ion-button expand="block" [routerLink]="['/play', {x: 4, y: 4}]">4 x 4</ion-button>
+        <ion-button expand="block" [routerLink]="['/play', {x: 5, y: 5}]">5 x 5</ion-button>
+        <ion-button expand="block">Custom</ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+    </ion-row>  
+  </ion-grid>
+</ion-content>

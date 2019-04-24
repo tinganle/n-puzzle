@@ -1,0 +1,12 @@
+<ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/']">
+        <ion-icon slot="icon-only" name="arrow-round-back" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+  <app-puzzle [x]="x" [y]="y"></app-puzzle>
+
+</ion-content>

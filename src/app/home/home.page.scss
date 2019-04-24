@@ -1,0 +1,16 @@
+.welcome-card ion-img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+ion-content {
+  --background: var(--background-color, rgb(169, 243, 248));
+}
+
+ion-grid {
+  --ion-grid-padding-lg: 150px;
+  --ion-grid-padding-md: 100px;
+  --ion-grid-padding-sm: 50px;
+  --ion-grid-padding-xl: 200px;
+  --ion-grid-padding-xs: 25px;
+}

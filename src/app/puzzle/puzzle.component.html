@@ -1,0 +1,17 @@
+<div class="puzzle">
+    <ion-text color="dark"><h2>Time: {{ time }}s</h2></ion-text>
+    <div class="grid" [ngStyle] = "getGridStyle()">
+        <div *ngFor="let tile of grid.tiles; let i = index" (click)="move(tile)" class="tile" 
+        [ngStyle]="getTileStyle(tile)">{{tile.value}}</div>
+    
+</div>
+
+<ion-grid>
+    <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+            <ion-button expand="block" (click)="startGame()">Restart Game</ion-button>
+        </ion-col>
+        <ion-col></ion-col>
+    </ion-row>
+</ion-grid>
