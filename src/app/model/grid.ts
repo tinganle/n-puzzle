@@ -11,7 +11,7 @@ export class Grid {
         this.xSize = x;
         this.ySize = y;
         this.tiles = [];
-        this.blank = new Position(x - 1, y-1);  // iniital position, right bottom corner
+        this.blank = new Position(x - 1, y-1);  // initial empty spot is in the right bottom corner
 
         const values: number[] = this.shuffle(this.xSize * this.ySize -1);
         for (let index = 0; index < values.length; index++) {
@@ -20,7 +20,6 @@ export class Grid {
                 this.getPosition(index)
             ));
         }
-        console.log(this.tiles);
     }
 
     isSolved(): boolean {
@@ -52,10 +51,13 @@ export class Grid {
         return tile.position.same(this.getPosition(tile.value - 1));
     }
 
+    // Create a randomly shuffled array
+    // To make sure the puzzle is solvable, the inversion count of the array should be even
+    // when the empty spot is at the bottom row.
     private shuffle(size: number): number[] {
         const values: number[] = [];
-        let index1: number; // index for value 1
-        let index2: number; // index for value 2
+        let index1: number; // index for number '1'
+        let index2: number; // index for number '2'
 
         // create initial array [1, 2, ... <size>]
         for (let index = 0; index < size; index++) {
@@ -71,7 +73,8 @@ export class Grid {
             const tempValue = values[currentIndex];
             values[currentIndex] = values[randomIndex];
             values[randomIndex] = tempValue;
-
+            
+            // keep a record of the index for number '1' and '2' for potential swap
             if (values[currentIndex] === 1) {
                 index1 = currentIndex;
             } else if (values[currentIndex] === 2) {
@@ -79,12 +82,12 @@ export class Grid {
             }
         }
 
-        // check inversion count, if odd, switch 1 and 2
+        // check inversion count, if odd (puzzle is unsolvable), swap '1' and '2' to 
+        // make it even
         if ((this.getInversionCount(values) % 2) !== 0) {
             values[index1] = 2;
             values[index2] = 1;
         }
-
         return values;
     }
 
