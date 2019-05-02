@@ -4,7 +4,7 @@ N-puzzle is a sliding puzzle that consists of a frame of numbered square tiles i
 
 This repository contains source code for an ionic/Angular implementation of N-Puzzle. 
 
-## To play a live game
+## To play a live game on GitHub page
 https://tinganle.github.io/n-puzzle/home
 
 ## To deploy as a GitHub page
